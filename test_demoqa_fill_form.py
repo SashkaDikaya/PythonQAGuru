@@ -1,8 +1,5 @@
 from selene import have
-from selene.support import webdriver
 from selene.support.shared import browser
-
-
 
 browser.open('https://demoqa.com/automation-practice-form').driver.maximize_window()
 browser.element('.practice-form-wrapper').should(have.text('Student Registration Form'))
