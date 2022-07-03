@@ -1,18 +1,20 @@
-from selene import have
+import pytest
+from selene import have, driver
 from selene.support.shared import browser
-from selenium.webdriver.chrome import options
 
-browser.open('https://www.google.com/')
-options.add_argument('window-size=1920x1080');
-browser.element('[name="q"]').type('selene').press_enter()
-browser.element('#search').should(have.text('User-oriented Web UI browser tests in Python'))
+
+@pytest.fixture(scope='session', autouse=True)
+def before_all():
+    browser.config.browser_name = 'firefox'
+    browser.open('https://www.google.com/')
 
 
 def find_selene_positive_test():
-    browser.open('https://www.google.com/')
-    options.add_argument('window-size=1920x1080');
+
+    driver.maximize_window()
     browser.element('[name="q"]').type('selene').press_enter()
     browser.element('#search').should(have.text('User-oriented Web UI browser tests in Python'))
+
 
 
 def find_selene_negative_test():
