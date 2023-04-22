@@ -1,3 +1,6 @@
 pytest==7.1.2
 selene==2.0.0b3
 allure-pytest
+requests
+voluptuous
+pytest=voluptuous
