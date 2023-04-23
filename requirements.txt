@@ -1,6 +1,8 @@
-pytest==7.1.2
-selene==2.0.0b3
-allure-pytest
 requests
+pytest
 voluptuous
-pytest=voluptuous
+pytest-voluptuous
+webdriver-manager==3.8.4
+selene==2.0.0b14
+allure-pytest
+packaging
